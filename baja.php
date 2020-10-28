@@ -8,7 +8,9 @@
 
   // 3) Preparar la orden SQL
   // DELETE FROM nombre_tabla WHERE campo_tabla=dato
-  // Elimina de la siguiente tabla el registro donde este campo sea igual a este dato
+  // => Elimina de la siguiente tabla el registro donde este campo sea igual a este dato
+  // DELETE FROM nombre_tabla
+  // => Elimina todos los registros de la siguiente tabla
   $consulta = "DELETE FROM alumno WHERE dni=$dni";
 
   // 4) Ejecutar la orden y eliminamos el regitro seleccionado

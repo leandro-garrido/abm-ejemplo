@@ -44,11 +44,24 @@
         <th>APELLIDO</th>
       </tr>
          <?php
+         // 1) Conexion
          $conexion = mysqli_connect("127.0.0.1", "root", "");
          mysqli_select_db($conexion, "escuela");
-         $consulta="SELECT*FROM alumno";
+
+         // 2) Almacenamos los datos del envío POST
+         // No se utiliza este paso en este caso puntual
+
+         // 3) Preparar la orden SQL
+         // SELECT * FROM nombre_tabla
+         // => Selecciona todos los campos de la siguiente tabla
+         // SELECT campos_tabla FROM nombre_tabla
+         // => Selecciona los siguientes campos de la siguiente tabla
+         $consulta="SELECT * FROM alumno";
+
+         // 4) Ejecutar la orden y optenemos los registros
          $datos= mysqli_query($conexion, $consulta);
 
+         // 5) Mostrar los datos del registro
          while ($fila2=mysqli_fetch_array($datos)) {
          echo "<tr>";
          echo "<td>";
@@ -63,6 +76,7 @@
          echo "<td>";
          echo $fila2 ["apellido"];
          echo "</td>";
+         echo "</tr>";
          }
 
          ?>

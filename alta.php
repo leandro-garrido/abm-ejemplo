@@ -10,7 +10,7 @@
 
   // 3) Preparar la orden SQL
   // INSERT INTO nombre_tabla (campos_tabla) VALUES (valores_a_ingresar)
-  // Ingresa dentro de la siguiente tabla los siguientes valores
+  // => Ingresa dentro de la siguiente tabla los siguientes valores
   $consulta = "INSERT INTO alumno (id,dni,nombre,apellido) VALUES ('','$dni','$nombre','$apellido')";
 
   // 4) Ejecutar la orden y ingresamos datos
