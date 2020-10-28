@@ -12,8 +12,8 @@
   </head>
   <body class="body-tamaño">
     <header>
-      <div class="container-img">
-        <img class="logo-img" src="img/logo/logo-stock-in.png" alt="">
+      <div class="container-img d-flex justify-content-center">
+        <img class="logo-img" src="img/logo.png" alt="">
       </div>
       <nav class="navbar navbar-light navbar-expand-sm bg-dark navbar-dark navbar-light justify-content-between">
         <ul class="navbar-nav">
