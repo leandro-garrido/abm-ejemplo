@@ -7,9 +7,11 @@
   $dni = $_POST['dni'];
 
   // 3) Preparar la orden SQL
+  // DELETE FROM nombre_tabla WHERE campo_tabla=dato
+  // Elimina de la siguiente tabla el registro donde este campo sea igual a este dato
   $consulta = "DELETE FROM alumno WHERE dni=$dni";
 
-  // 4) Ejecutar la orden y ingresamos datos
+  // 4) Ejecutar la orden y eliminamos el regitro seleccionado
   mysqli_query($conexion, $consulta);
   header('Location: index.php');
 ?>
