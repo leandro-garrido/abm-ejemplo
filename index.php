@@ -36,60 +36,48 @@
       </nav>
     </header>
 
-    <table class="table table-striped">
-      <tr>
-        <th>ID</th>
-        <th>DNI</th>
-        <th>NOMBRE</th>
-        <th>APELLIDO</th>
-      </tr>
-         <?php
-         // 1) Conexion
-         $conexion = mysqli_connect("127.0.0.1", "root", "");
-         mysqli_select_db($conexion, "escuela");
+    <div class="">
+      <table class="table table-striped">
+        <tr>
+          <th>ID</th>
+          <th>DNI</th>
+          <th>NOMBRE</th>
+          <th>APELLIDO</th>
+        </tr>
+        <?php
+        // 1) Conexion
+        $conexion = mysqli_connect("127.0.0.1", "root", "");
+        mysqli_select_db($conexion, "escuela");
 
-         // 2) Almacenamos los datos del envío POST
-         // No se utiliza este paso en este caso puntual
+        // 2) Almacenamos los datos del envío POST
+        // No se utiliza este paso en este caso puntual
 
-         // 3) Preparar la orden SQL
-         // SELECT * FROM nombre_tabla
-         // => Selecciona todos los campos de la siguiente tabla
-         // SELECT campos_tabla FROM nombre_tabla
-         // => Selecciona los siguientes campos de la siguiente tabla
-         $consulta="SELECT * FROM alumno";
+        // 3) Preparar la orden SQL
+        // SELECT * FROM nombre_tabla
+        // => Selecciona todos los campos de la siguiente tabla
+        // SELECT campos_tabla FROM nombre_tabla
+        // => Selecciona los siguientes campos de la siguiente tabla
+        $consulta="SELECT*FROM alumno";
 
-         // 4) Ejecutar la orden y optenemos los registros
-         $datos= mysqli_query($conexion, $consulta);
+        // 4) Ejecutar la orden y optenemos los registros
+        $datos= mysqli_query($conexion, $consulta);
 
-         // 5) Mostrar los datos del registro
-         while ($fila2=mysqli_fetch_array($datos)) {
-         echo "<tr>";
-         echo "<td>";
-         echo $fila2 ["id"];
-         echo "</td>";
-         echo "<td>";
-         echo $fila2 ["dni"];
-         echo "</td>";
-         echo "<td>";
-         echo $fila2 ["nombre"];
-         echo "</td>";
-         echo "<td>";
-         echo $fila2 ["apellido"];
-         echo "</td>";
-         echo "</tr>";
-         }
-
-         ?>
-      </tr>
-    </table>
+        // 5) Mostrar los datos del registro
+        while ($fila2=mysqli_fetch_array($datos)) : ?>
+        <tr>
+          <td><?php echo $fila2['id']; ?></td>
+          <td><?php echo $fila2['dni']; ?></td>
+          <td><?php echo $fila2['nombre']; ?></td>
+          <td><?php echo $fila2['apellido']; ?></td>
+        </tr>
+        <?php endwhile; //con endwhile puedo cerrar el bucle while anteriormente abierto.?>
+      </table>
+    </div>
 
     <div class="navbar navbar-light navbar-expand-sm bg-dark navbar-dark navbar-light justify-content-between"></div>
-
-    <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
   </body>
 </html>
