@@ -63,12 +63,12 @@
         $datos= mysqli_query($conexion, $consulta);
 
         // 5) Mostrar los datos del registro
-        while ($fila2=mysqli_fetch_array($datos)) : ?>
+        while ($reg=mysqli_fetch_array($datos)) : ?>
         <tr>
-          <td><?php echo $fila2['id']; ?></td>
-          <td><?php echo $fila2['dni']; ?></td>
-          <td><?php echo $fila2['nombre']; ?></td>
-          <td><?php echo $fila2['apellido']; ?></td>
+          <td><?php echo $reg['id']; ?></td>
+          <td><?php echo $reg['dni']; ?></td>
+          <td><?php echo $reg['nombre']; ?></td>
+          <td><?php echo $reg['apellido']; ?></td>
         </tr>
         <?php endwhile; //con endwhile puedo cerrar el bucle while anteriormente abierto.?>
       </table>
