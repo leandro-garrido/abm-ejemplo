@@ -16,37 +16,23 @@
         <div class="container-img d-flex justify-content-center p-3">
           <img class="logo-img" src="img/logo.png" alt="">
         </div>
-        <nav class="navbar navbar-light navbar-expand-sm bg-dark navbar-dark navbar-light justify-content-between">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.php">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="alta.html">Agregar</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="baja.html">Eliminar</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="modificar.html">Modificar</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#"></a>
-            </li>
-          </ul>
-        </nav>
+        <nav class="navbar navbar-light navbar-expand-sm bg-dark navbar-dark navbar-light justify-content-between"></nav>
       </header>
       <div class="row p-3">
         <div class="container border p-3">
-          <h2>Eliminar</h2>
-          <p>Ingrese el DNI del alumno a eliminar de la base de datos.</p>
-          <form action="baja.php" method="post">
+          <h2>Iniciar sesión</h2>
+          <p>Ingrese su nombre de usuario y contraseña.</p>
+          <form action="index.php" method="post">
             <div class="form-group">
-              <label>DNI</label>
-              <input class="form-control" type="text" name="dni" placeholder="DNI">
+              <label>Nombre de usuario</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Contraseña</label>
+              <input type="password" class="form-control">
             </div>
             <div class="d-flex justify-content-end">
-              <input class="btn btn-primary" type="submit" name="submit" value="Eliminar">
+              <button type="submit" class="btn btn-primary">Iniciar sesión</button>
             </div>
           </form>
         </div>
