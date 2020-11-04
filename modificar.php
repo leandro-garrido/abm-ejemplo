@@ -57,8 +57,8 @@ $datos=mysqli_fetch_array($repuesta);
       </header>
       <?php
       //6) Filtramos los diferentes resultados y realizamos una accion definida para cada uno.
-      // Si en el array $datos es de tipo NULL, ejecuta el bloque de instrucciones.
-      if (is_null($datos)){ ?>
+      // Si el array $datos es de tipo NULL, ejecuta el bloque de instrucciones.
+      if (is_null($datos)){?>
         <div class="row p-3">
           <div class="container border p-3">
             <h2>Modificar</h2>
@@ -123,6 +123,8 @@ $datos=mysqli_fetch_array($repuesta);
               $apellido=$_POST['apellido'];
 
               // 3') Preparar la orden SQL
+              // UPDATE nombre_tabla SET nombre_campos=$variable WHERE campo_clave=$variable
+              // Actualiza de la tabla alumno los siguiente campos donde el campo dni sea igual a $dni
               $consulta = "UPDATE alumno SET dni='$dni', nombre='$nombre', apellido='$apellido' WHERE dni=$dni";
 
               // 4') Ejecutar la orden y actualizamos los datos
